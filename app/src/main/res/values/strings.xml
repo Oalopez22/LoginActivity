@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">LoginActivity</string>
+
+                        /* Labels */
+            /* Login */
+    <string name="labelLoginTittle">Login</string>
+    <string name="labelLogUser">Usuario</string>
+    <string name="labelLogPassword">Contraseña</string>
+
+            /* Register*/
+    <string name="labelRegTitle">Registrarse</string>
+    <string name="labelRegName">Nombre Completo</string>
+    <string name="labelRegEmail">Correo Electronico</string>
+    <string name="labelRegPhone">Telefono</string>
+    <string name="labelRegAddress">Direccion</string>
+    <string name="labelRegPassword">Contraseña</string>
+
+
+                        /* Buttons */
+    <string name="btnLog">Iniciar sesion</string>
+    <string name="btnLogRegister">Registrarse</string>
+    <string name="btnRegRegister">Registrarse</string>
+
+
+
+</resources>
