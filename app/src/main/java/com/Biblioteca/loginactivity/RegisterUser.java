@@ -42,11 +42,12 @@ public class RegisterUser extends AppCompatActivity {
             public void onClick(View v) {
                if(validarNombre() && validarEmail() && validarTelefono() && validardirreccion() && validarPass() ){
                     DbBiblioteca dbbiblioteca = new DbBiblioteca(RegisterUser.this);
+                    usuario.setTip_user(1);
                     long id = dbbiblioteca.crearUsuario(usuario);
 
                     if(id > 0 ){
-                        limpiar();
                         Toast.makeText(RegisterUser.this, "Usuario creado", Toast.LENGTH_LONG).show();
+                        limpiar();
                     }else{
                         Toast.makeText(RegisterUser.this, "Error al crear el usuario", Toast.LENGTH_LONG).show();
                     }

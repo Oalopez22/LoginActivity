@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DbHelper extends SQLiteOpenHelper {
-    private static  final int DATABASE_VERSION = 2;
+    private static  final int DATABASE_VERSION = 1;
     private static  final String DATABASE_NAME = "biblioteca.db";
     public static  final String TABLE_USER = "usuario";
     public static final String COLUMNA_ID = "_id";
@@ -17,7 +17,10 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String COLUMNA_DIRECCION = "direccion";
     public static final String COLUMNA_PASSWORD = "password";
     public static final String COLUMNA_TIP_USER = "tip_user";
-
+                /* tabla tipo de usuario*/
+     public static  final String TABLE_TIP_USER = "tipo_user";
+     public static final String COLUMNA_ID_TIPO_USER = "id";
+     public static final String COLUMNA_TIPO_USER = "tipo_usuario";
     public DbHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -33,11 +36,19 @@ public class DbHelper extends SQLiteOpenHelper {
                 + " text not null, " + COLUMNA_PASSWORD
                 + " text not null, " + COLUMNA_TIP_USER
                 + " integer)");
+
+
+        db.execSQL("create table "
+                + TABLE_TIP_USER + "(" + COLUMNA_ID_TIPO_USER
+                + " integer primary key autoincrement, " + COLUMNA_TIPO_USER
+                + " text not null" +")");
+        db.execSQL("INSERT INTO tipo_user (id,tipo_usuario) VALUES (0,'admin'),(1,'usuario')");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(" DROP TABLE " + TABLE_USER);
+        db.execSQL(" DROP TABLE " + TABLE_TIP_USER);
         onCreate(db);
     }
 }
