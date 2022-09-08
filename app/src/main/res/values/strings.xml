@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LoginActivity</string>
+    <string name="app_name">Biblioteca</string>
 
     /* Labels */
     /* Login */
@@ -23,4 +23,19 @@
 
     /* labels Admin*/
     <string name="label_librosAdmin">Libros Disponibles</string>
+    <string name="labelAddTittle">Agregar libro</string>
+    <string name="labelAddNombreLibro">Nombre Libro</string>
+    <string name="labelAddAutorLibro">Autor Libro</string>
+    <string name="labelAddCantidadLibro">Cantidad libros</string>
+    <string name="labelAddUrl">Url Libro</string>
+    <string name="labelAddImgLibro">Imagen Libro</string>
+    <string name="labelAddDescLibro">Descripcion</string>
+    /*              Buttons Admin*/
+    <string name="btnAgregar">Agregar Libro</string>
+                    /* Admin menu items*/
+    <string name="MenuAdd">Agregar</string>
+    <string name="MenuPrestado">Prestados</string>
+    <string name="MenuSalir">Salir</string>
+
+
 </resources>

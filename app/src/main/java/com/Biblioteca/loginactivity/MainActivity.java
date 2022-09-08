@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import com.Biblioteca.loginactivity.SharedPreferences.SharedPreferences;
@@ -66,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
+
 
    private void registrarUsuario(){
         Intent intent = new Intent(this, RegisterUser.class);

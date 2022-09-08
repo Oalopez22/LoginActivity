@@ -4,9 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/drawable-anydpi/ic_action_plus.xml" value="0.329" />
+        <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/layout/activity_add_book_admin.xml" value="0.3625" />
         <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/layout/activity_admin.xml" value="0.3625" />
         <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/layout/activity_main.xml" value="0.3625" />
         <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/layout/activity_register_user.xml" value="0.4" />
+        <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/menu/menuadmin.xml" value="0.3625" />
+        <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/menu/nenuadmin.xml" value="0.3625" />
         <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/LoginActivity/app/src/main/res/layout/activity_main.xml" value="0.3484375" />
         <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/LoginActivity/app/src/main/res/layout/activity_register_user.xml" value="0.3625" />
       </map>
