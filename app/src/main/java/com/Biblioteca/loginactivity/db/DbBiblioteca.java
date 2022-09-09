@@ -13,6 +13,8 @@ import com.Biblioteca.loginactivity.RegisterUser;
 import com.Biblioteca.loginactivity.entidades.Libro;
 import com.Biblioteca.loginactivity.entidades.Usuario;
 
+import java.util.ArrayList;
+
 public class DbBiblioteca extends  DbHelper{
     Context context;
     DbHelper dbhelper;
@@ -83,6 +85,27 @@ public class DbBiblioteca extends  DbHelper{
             ex.toString();
         }
         return id;
+    }
+
+    public ArrayList<Libro> mostrarLibros(){
+        ArrayList<Libro> listaLibros = new ArrayList<>();
+        Libro libros = null;
+        Cursor cursorLibros = null;
+        cursorLibros =db.rawQuery("SELECT * FROM " +TABLE_BOOK,null);
+        if (cursorLibros.moveToFirst()){
+            do{
+                libros = new Libro();
+                libros.setIdlibro(cursorLibros.getInt(0));
+                libros.setNombrelibro(cursorLibros.getString(1));
+                libros.setAutorlibro(cursorLibros.getString(2));
+                libros.setCantidadlibro(cursorLibros.getInt(3));
+                libros.setUrllibro(cursorLibros.getString(4));
+                libros.setImagenlibro(cursorLibros.getString(5));
+                listaLibros.add(libros);
+            }while (cursorLibros.moveToNext());
+        }
+        cursorLibros.close();
+        return listaLibros;
     }
 
 }

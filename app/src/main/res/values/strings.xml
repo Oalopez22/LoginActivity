@@ -30,9 +30,20 @@
     <string name="labelAddUrl">Url Libro</string>
     <string name="labelAddImgLibro">Imagen Libro</string>
     <string name="labelAddDescLibro">Descripcion</string>
-    /*              Buttons Admin*/
+
+    /* label Admin Edit */
+    <string name="label_EditAdminTitle">Editar libros</string>
+    <string name="labelEditNombreLibro">Nombre Libro</string>
+    <string name="labelEditutorLibro">Autor Libro</string>
+    <string name="labelEditCantidadLibro">Cantidad libros</string>
+    <string name="labelEditUrl">Url Libro</string>
+    <string name="labelEditImgLibro">Imagen Libro</string>
+    <string name="labelEditDescLibro">Descripcion</string>
+
+    /* Buttons Admin*/
     <string name="btnAgregar">Agregar Libro</string>
-                    /* Admin menu items*/
+    <string name="btnUpdateBook">Actualizar Libro</string>
+    /* Admin menu items*/
     <string name="MenuAdd">Agregar</string>
     <string name="MenuPrestado">Prestados</string>
     <string name="MenuSalir">Salir</string>
