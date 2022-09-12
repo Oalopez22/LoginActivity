@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DbHelper extends SQLiteOpenHelper {
-    private static  final int DATABASE_VERSION = 1;
+    private static  final int DATABASE_VERSION = 2;
     private static  final String DATABASE_NAME = "biblioteca.db";
     public static  final String TABLE_USER = "usuario";
     public static final String COLUMNA_ID = "_id";
@@ -24,7 +24,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
                 /* Tabla Libros */
     public static final String TABLE_BOOK = "libro";
-    public static final String COLUMNA_ID_lIBRO = "idlibro";
+    public static final String COLUMNA_ID_lIBRO = "id_libro";
     public static final String COLUMNA_NOMBRE_LIBRO = "nombre_libro";
     public static final String COLUMNA_AUTOR_LIBRO = "autor_libro";
     public static final String COLUMNA_CANTIDAD_LIBRO = "cantidad_libro";

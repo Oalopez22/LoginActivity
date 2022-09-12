@@ -6,17 +6,17 @@
     android:layout_height="match_parent"
     android:background="#000000"
     android:orientation="vertical"
-    tools:context=".AdminActivity">
+    tools:context=".UserAvailableBooks">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="74dp">
+        android:layout_height="66dp">
 
         <TextView
             android:id="@+id/labelIdUser"
             android:layout_width="96dp"
             android:layout_height="22dp"
-            android:text="Admin"
+            android:text="User"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
@@ -107,9 +107,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2"
-            tools:itemCount="2"
             tools:listitem="@layout/lista_item_libros" />
     </LinearLayout>
-
 </LinearLayout>

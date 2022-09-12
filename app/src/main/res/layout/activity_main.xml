@@ -31,13 +31,13 @@
 
     <EditText
         android:id="@+id/txtLogUser"
-        android:labelFor="@id/txtLogPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:ems="10"
-        android:text="omar-alexis40@hotmail.com"
         android:inputType="textEmailAddress"
+        android:labelFor="@id/txtLogPassword"
+        android:text="Alopez@hotmail.com"
         android:textAlignment="center"
         android:textColor="#020202"
         android:textSize="24sp"
@@ -57,13 +57,13 @@
         android:id="@+id/txtLogPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Oalopez123"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:inputType="textPassword"
+        android:text="Alopez123"
         android:textAlignment="center"
         android:textColor="#0E0E0E"
         android:textSize="24sp"
-        android:layout_marginBottom="20dp"
         android:textStyle="bold" />
 
     <Button

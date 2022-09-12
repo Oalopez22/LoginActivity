@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import com.Biblioteca.loginactivity.SharedPreferences.SharedPreferences;
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     user.setEmail(correo);
                     user.setPassword(password);
-
+                    dbBiblioteca.revisarDatos(user);
                     Boolean revisarDatos = dbBiblioteca.revisarDatos(user);
                     if (revisarDatos) {
                         sp.setCorreo(correo);
@@ -76,8 +75,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     private void ingresarUser(){
-        if (user.getTip_user()==0){
+/*        if (user.getTip_user()==0){
             Intent intent = new Intent(this,AdminActivity.class);
+            startActivity(intent);
+        }*/
+        if (user.getTip_user()==0){
+            Intent intent = new Intent(this, UserActivity.class);
             startActivity(intent);
         }
     }

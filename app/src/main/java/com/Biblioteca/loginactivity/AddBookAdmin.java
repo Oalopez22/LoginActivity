@@ -48,6 +48,7 @@ public class AddBookAdmin extends AppCompatActivity {
                     long id = dbbiblioteca.agregarLibro(libros);
                     if(id > 0 ){
                         Toast.makeText(AddBookAdmin.this, "Libro agregado", Toast.LENGTH_LONG).show();
+                        inicio();
                     }else{
                         Toast.makeText(AddBookAdmin.this, "Error al agregar el libro", Toast.LENGTH_LONG).show();
                     }
@@ -124,8 +125,9 @@ public class AddBookAdmin extends AppCompatActivity {
         }
     }
 
-    private void cargarimagen(){
-
+    private void inicio(){
+        Intent intent = new Intent(this,AdminActivity.class);
+        startActivity(intent);
     }
 
 }

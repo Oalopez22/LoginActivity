@@ -19,6 +19,7 @@ public class DbBiblioteca extends  DbHelper{
     Context context;
     DbHelper dbhelper;
     SQLiteDatabase db;
+    Libro libro;
     Usuario user;
     public DbBiblioteca(@Nullable Context context) {
 
@@ -26,6 +27,7 @@ public class DbBiblioteca extends  DbHelper{
         this.context = context;
         dbhelper = new DbHelper(context);
         db=dbhelper.getWritableDatabase();
+        libro = new Libro();
     }
 
 
@@ -55,7 +57,8 @@ public class DbBiblioteca extends  DbHelper{
 
     public boolean  revisarDatos(Usuario usuario){
         /*        Toast.makeText(context, "Correo :"+spreference.getCorreo()+" contraseña : "+spreference, Toast.LENGTH_SHORT).show();*/
-        Cursor cursor = db.rawQuery("SELECT * FROM usuario WHERE correo=? AND password=? ", new String[]{usuario.getEmail(),usuario.getPassword()});
+        Cursor cursor;
+                cursor = db.rawQuery("SELECT * FROM usuario WHERE correo=? AND password=? ", new String[]{usuario.getEmail(),usuario.getPassword()});
         if(cursor.getCount()>0){
             ContentValues values = new ContentValues();
             return  true;
@@ -101,6 +104,7 @@ public class DbBiblioteca extends  DbHelper{
                 libros.setCantidadlibro(cursorLibros.getInt(3));
                 libros.setUrllibro(cursorLibros.getString(4));
                 libros.setImagenlibro(cursorLibros.getString(5));
+                libros.setDescripcionlibro(cursorLibros.getString(6));
                 listaLibros.add(libros);
             }while (cursorLibros.moveToNext());
         }
@@ -108,5 +112,37 @@ public class DbBiblioteca extends  DbHelper{
         return listaLibros;
     }
 
+
+    public Libro verLibros(int id){
+        libro = null;
+        Cursor cursorLibros = null;
+        cursorLibros =db.rawQuery("SELECT * FROM " +TABLE_BOOK + " WHERE id_libro = " + id ,null);
+        if (cursorLibros.moveToFirst()){
+                libro = new Libro();
+                libro.setIdlibro(cursorLibros.getInt(0));
+                libro.setNombrelibro(cursorLibros.getString(1));
+                libro.setAutorlibro(cursorLibros.getString(2));
+                libro.setCantidadlibro(cursorLibros.getInt(3));
+                libro.setUrllibro(cursorLibros.getString(4));
+                libro.setImagenlibro(cursorLibros.getString(5));
+                libro.setDescripcionlibro(cursorLibros.getString(6));
+            }
+        cursorLibros.close();
+        return libro;
+    }
+
+    public boolean editarLibro(Libro libro){
+        boolean correcto = true;
+        try {
+            db.execSQL("UPDATE " + TABLE_BOOK + " SET nombre_libro = '" + libro.getNombrelibro() + "', autor_libro = '" + libro.getAutorlibro() + "', cantidad_libro = '" + libro.getCantidadlibro() + "', url_libro = '" + libro.getUrllibro() + "', imagen_libro = '" + libro.getImagenlibro() + "', descripcion_libro = '" + libro.getDescripcionlibro() + "' WHERE id_libro='" + libro.getIdlibro() + "' ");
+            correcto = true;
+        }catch (Exception ex){
+            ex.toString();
+            correcto = false;
+        }finally {
+            db.close();
+        }
+        return correcto;
+    }
 }
 
