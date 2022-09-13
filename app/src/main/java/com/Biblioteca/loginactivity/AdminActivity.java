@@ -28,7 +28,7 @@ public class AdminActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin);
         dbBiblioteca = new DbBiblioteca(AdminActivity.this);
 
-        listalibros = findViewById(R.id.RviewLibros);
+        listalibros = findViewById(R.id.RviewAdminBooks);
         listaArrayLibros = new ArrayList<>();
         ListaLibrosAdapter adapter = new ListaLibrosAdapter(dbBiblioteca.mostrarLibros());
         listalibros.setAdapter(adapter);

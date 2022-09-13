@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 
+import com.Biblioteca.loginactivity.adaptadores.DescLibroAdapter;
 import com.Biblioteca.loginactivity.adaptadores.ListaLibrosAdapter;
 import com.Biblioteca.loginactivity.db.DbBiblioteca;
 import com.Biblioteca.loginactivity.entidades.Libro;
@@ -28,15 +29,12 @@ public class UserAvailableBooks extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_available_books);
         dbBiblioteca = new DbBiblioteca(UserAvailableBooks.this);
-
-
-        adapter = new ListaLibrosAdapter(dbBiblioteca.mostrarLibros());
+        listalibros = findViewById(R.id.RviewUserAvailableBooks);
+        ListaLibrosAdapter adapter = new ListaLibrosAdapter(dbBiblioteca.mostrarLibros());
         listalibros.setAdapter(adapter);
-        imgPlus = findViewById(R.id.btnPlus);
-        listalibros = findViewById(R.id.RviewLibros);
-        listaArrayLibros = new ArrayList<>();
         listalibros.setLayoutManager(new GridLayoutManager(UserAvailableBooks.this,2));
-        imgPlus.setOnClickListener(new View.OnClickListener() {
+
+/*        imgPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PopupMenu popupMenu = new PopupMenu(UserAvailableBooks.this,imgPlus);
@@ -55,7 +53,7 @@ public class UserAvailableBooks extends AppCompatActivity {
                 });
                 popupMenu.show();
             }
-        });
+        });*/
 
     }
 }

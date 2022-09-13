@@ -13,28 +13,28 @@
       android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/labelIdUser"
         android:layout_width="96dp"
         android:layout_height="22dp"
-        android:text="Admin"
+        android:text="User"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.055" />
 
     <TextView
         android:id="@+id/labelUserName"
         android:layout_width="118dp"
         android:layout_height="27dp"
-        android:layout_marginTop="28dp"
         android:text="UserName"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.443"
+        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/labelIdUser" />
+        tools:layout_editor_absoluteY="25dp" />
 
     <ImageView
         android:id="@+id/btnPlus"
@@ -100,12 +100,13 @@
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="495dp"
-      android:orientation="vertical">
+      android:orientation="vertical"
+      android:layout_marginHorizontal="20dp">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RviewLibros"
+        android:id="@+id/RviewAdminBooks"
         android:layout_width="match_parent"
-        android:layout_height="468dp"
+        android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
         tools:itemCount="2"

@@ -4,37 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="@color/black"
+
     android:orientation="vertical"
-    tools:context=".UserAvailableBooks">
+    tools:context=".UserLendBook">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="66dp">
+        android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/labelIdUser"
             android:layout_width="96dp"
             android:layout_height="22dp"
             android:text="User"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.384"
+            app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.055" />
 
         <TextView
             android:id="@+id/labelUserName"
             android:layout_width="118dp"
             android:layout_height="27dp"
-            android:layout_marginTop="28dp"
             android:text="UserName"
             android:textColor="#FFFFFF"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.443"
+            app:layout_constraintHorizontal_bias="0.46"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/labelIdUser" />
+            tools:layout_editor_absoluteY="25dp" />
 
         <ImageView
             android:id="@+id/btnPlus"
@@ -63,49 +66,73 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:background="#000000"
+        android:layout_height="56dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-        <SearchView
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/background"
-
-            />
-
-
+            android:layout_weight="1"
+            android:text="Prestar Libro"
+            android:textAlignment="center"
+            android:textColor="#F6F2F2"
+            android:textSize="34sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:orientation="horizontal">
+        android:layout_height="546dp"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView21"
+        <ImageView
+            android:id="@+id/imgverImgLibro"
+            android:layout_width="match_parent"
+            android:layout_height="209dp" />
+
+        <EditText
+            android:id="@+id/txteVerNombreLibro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:text="@string/label_librosAdmin"
-            android:textAlignment="textStart"
-            android:textColor="#FDFDFD"
-            android:textSize="20sp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="#F6F4F4"
             android:textStyle="bold" />
 
+        <EditText
+            android:id="@+id/txtVerAutorLibro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="#F6F4F4"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtVerDescLibro"
+            android:layout_width="match_parent"
+            android:layout_height="244dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="#F6F4F4"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/RviewUserAvailableBooks"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="20dp" />
+        <Button
+            android:id="@+id/btnLendBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Button"
+            android:textAlignment="center"
+            android:textStyle="bold" />
     </LinearLayout>
+
 </LinearLayout>

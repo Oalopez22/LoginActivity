@@ -38,11 +38,11 @@ public class Update_Book_Admin extends AppCompatActivity {
 
         if (savedInstanceState == null){
             Bundle extras = getIntent().getExtras();
-                if (extras == null){
-                    id = Integer.parseInt(null);
-                }else{
-                    id = extras.getInt("id_libro");
-                }
+            if (extras == null){
+                id = Integer.parseInt(null);
+            }else{
+                id = extras.getInt("id_libro");
+            }
         }else{
             id = (int) savedInstanceState.getSerializable("id_libro");
         }
@@ -52,7 +52,7 @@ public class Update_Book_Admin extends AppCompatActivity {
         if (libro != null){
             txtEditBookName.setText(libro.getNombrelibro());
             txtEditBookAuthor.setText(libro.getAutorlibro());
-            txtEditCantidadBook.setText(String.valueOf(libro.getCantidadlibro()));
+            txtEditCantidadBook.setText(libro.getCantidadlibro());
             txtEditUrlBook.setText(libro.getUrllibro());
             txtEditImgBook.setText(libro.getImagenlibro());
             txtDescBok.setText(libro.getDescripcionlibro());

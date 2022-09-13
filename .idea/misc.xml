@@ -5,7 +5,7 @@
       <map>
         <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/drawable-anydpi/ic_action_plus.xml" value="0.329" />
         <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/drawable/background.xml" value="0.3625" />
-        <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/drawable/card.xml" value="0.3635" />
+        <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/drawable/card.xml" value="0.264" />
         <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/drawable/cardUser.xml" value="0.3525" />
         <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/drawable/carduser.xml" value="0.3525" />
         <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/layout/activity_add_book_admin.xml" value="0.3625" />
@@ -17,6 +17,8 @@
         <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/layout/activity_update_book_admin.xml" value="0.25" />
         <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/layout/activity_user.xml" value="0.4" />
         <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/layout/activity_user_available_books.xml" value="0.3625" />
+        <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/layout/activity_user_lend_book.xml" value="0.4" />
+        <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/layout/descripcion_libro.xml" value="0.3614583333333333" />
         <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/layout/lista_item_libros.xml" value="0.3129528985507246" />
         <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/layout/lista_item_librosUser.xml" value="0.3625" />
         <entry key="..\:/Users/cloud/Desktop/PRUEBAS-OMAR/BIBLIOTECA - OMAR/LoginActivity/app/src/main/res/menu/menuUser.xml" value="0.3625" />
