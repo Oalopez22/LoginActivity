@@ -8,41 +8,54 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/card"
+        >
 
         <ImageView
             android:id="@+id/imgViewBook"
-            android:layout_width="match_parent"
-            android:layout_height="357dp"
+            android:layout_width="400dp"
+            android:layout_height="218dp"
 
             />
 
         <TextView
-            android:id="@+id/txtViewBookNAme"
+            android:id="@+id/txtverBookName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:background="@drawable/background"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name"
             android:textAlignment="center"
-            android:textColor="#F6F3F3"
-            android:textSize="48sp"
-            android:textStyle="bold" />
+            android:textColor="#FDFDFD"
+            android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/txtViewBookAuthor"
+            android:id="@+id/txtverBookAutor"
             android:layout_width="match_parent"
-            android:layout_height="32dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name"
             android:textAlignment="center"
-            android:textColor="#F6F3F3"
-            android:textSize="16sp" />
+            android:textColor="#FDFDFD"
+            android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/txtViewDescBook"
+            android:id="@+id/txtverBookDesc"
             android:layout_width="match_parent"
-            android:layout_height="274dp"
-            android:inputType="textImeMultiLine"
-            android:text="TextView"
-            android:textColor="#F6F3F3"
-            android:textSize="20sp" />
+            android:layout_height="228dp"
+            android:ems="10"
+            android:inputType="textMultiLine|textPersonName"
+            android:text="Name"
+            android:textAlignment="center"
+            android:background="@drawable/background"
+            android:textColor="#FDFDFD"
+            android:textSize="24sp" />
+
     </LinearLayout>
+
 </LinearLayout>

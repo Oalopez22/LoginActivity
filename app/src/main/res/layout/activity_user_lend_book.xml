@@ -11,7 +11,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+>
+
 
         <TextView
             android:layout_width="96dp"
@@ -34,10 +36,12 @@
             android:text="UserName"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.46"
+            app:layout_constraintHorizontal_bias="0.43"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="25dp" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.774" />
 
         <ImageView
             android:id="@+id/btnPlus"
@@ -45,11 +49,11 @@
             android:layout_height="51dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.956"
+            app:layout_constraintHorizontal_bias="0.955"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.179"
-            app:srcCompat="@drawable/ic_action_plus" />
+            app:layout_constraintVertical_bias="0.285"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -84,40 +88,52 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="546dp"
+        android:layout_height="548dp"
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/imgverImgLibro"
+            android:id="@+id/imgViewBook2"
             android:layout_width="match_parent"
-            android:layout_height="209dp" />
+            android:layout_height="218dp"
 
-        <EditText
-            android:id="@+id/txteVerNombreLibro"
+            />
+
+        <TextView
+            android:id="@+id/txtverBooknombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:ems="10"
             android:inputType="textPersonName"
-            android:textColor="#F6F4F4"
+            android:text="Name"
+            android:textAlignment="center"
+            android:textColor="#FDFDFD"
+            android:textSize="48sp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/txtVerAutorLibro"
+        <TextView
+            android:id="@+id/txtverBookAutor2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textColor="#F6F4F4"
-            android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/txtVerDescLibro"
-            android:layout_width="match_parent"
-            android:layout_height="244dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:textColor="#F6F4F4"
-            android:textStyle="bold" />
+            android:text="Name"
+            android:textAlignment="center"
+            android:textColor="#9F9F9F"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtverBookDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="228dp"
+
+            android:ems="10"
+            android:inputType="textMultiLine|textPersonName"
+            android:text="Name"
+            android:textAlignment="center"
+            android:textColor="#FDFDFD"
+            android:textSize="24sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -126,11 +142,11 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnLendBook"
+            android:id="@+id/btnPrestarlibro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button"
+            android:text="@string/btnPrestarLibro"
             android:textAlignment="center"
             android:textStyle="bold" />
     </LinearLayout>

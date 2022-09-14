@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.Biblioteca.loginactivity.AdminActivity;
 import com.Biblioteca.loginactivity.R;
 import com.Biblioteca.loginactivity.Update_Book_Admin;
 import com.Biblioteca.loginactivity.UserLendBook;
@@ -39,7 +40,6 @@ public class ListaLibrosAdapter extends RecyclerView.Adapter<ListaLibrosAdapter.
         Glide.with(holder.imgimagen).load(ListaLibros.get(position).getImagenlibro()).into(holder.imgimagen);
         holder.viewNombreLibro.setText(ListaLibros.get(position).getNombrelibro());
         holder.viewAutorLibro.setText(ListaLibros.get(position).getAutorlibro());
-        Glide.with(holder.imagenLibro).load(ListaLibros.get(position).getImagenlibro()).into(holder.imagenLibro);
     }
 
     @Override
@@ -57,12 +57,11 @@ public class ListaLibrosAdapter extends RecyclerView.Adapter<ListaLibrosAdapter.
             viewNombreLibro = itemView.findViewById(R.id.viewNombreLibro);
             viewAutorLibro = itemView.findViewById(R.id.viewAutor);
             imgimagen = itemView.findViewById(R.id.imageView2);
-            imagenLibro = itemView.findViewById(R.id.imgverImgLibro);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Context context = v.getContext();
-                    Intent intent = new Intent(context, UserLendBook .class);
+                    Intent intent = new Intent(context, AdminActivity.class);
                     intent.putExtra("ID",ListaLibros.get(getAdapterPosition()).getIdlibro());
                     context.startActivity(intent);
                 }

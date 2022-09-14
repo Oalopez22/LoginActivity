@@ -21,18 +21,21 @@ import java.util.ArrayList;
 public class UserAvailableBooks extends AppCompatActivity {
     ImageView imgPlus;
     RecyclerView listalibros;
-    ArrayList<Libro> listaArrayLibros;
-    ListaLibrosAdapter adapter;
     DbBiblioteca dbBiblioteca;
+    ArrayList<Libro> listaArrayLibros;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_available_books);
         dbBiblioteca = new DbBiblioteca(UserAvailableBooks.this);
+
         listalibros = findViewById(R.id.RviewUserAvailableBooks);
-        ListaLibrosAdapter adapter = new ListaLibrosAdapter(dbBiblioteca.mostrarLibros());
+        listaArrayLibros = new ArrayList<>();
+
+        DescLibroAdapter adapter = new DescLibroAdapter(dbBiblioteca.mostrarLibros());
         listalibros.setAdapter(adapter);
         listalibros.setLayoutManager(new GridLayoutManager(UserAvailableBooks.this,2));
+
 
 /*        imgPlus.setOnClickListener(new View.OnClickListener() {
             @Override

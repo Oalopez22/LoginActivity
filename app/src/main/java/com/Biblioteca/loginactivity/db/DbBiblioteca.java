@@ -94,7 +94,7 @@ public class DbBiblioteca extends  DbHelper{
         ArrayList<Libro> listaLibros = new ArrayList<>();
         Libro libros = null;
         Cursor cursorLibros = null;
-        cursorLibros =db.rawQuery("SELECT * FROM " +TABLE_BOOK,null);
+        cursorLibros =db.rawQuery("SELECT * FROM " +TABLE_BOOK ,null);
         if (cursorLibros.moveToFirst()){
             do{
                 libros = new Libro();
@@ -116,7 +116,7 @@ public class DbBiblioteca extends  DbHelper{
     public Libro verLibros(int id){
         libro = null;
         Cursor cursorLibros = null;
-        cursorLibros =db.rawQuery("SELECT * FROM " +TABLE_BOOK + " WHERE id_libro = " + id ,null);
+        cursorLibros =db.rawQuery("SELECT * FROM " +TABLE_BOOK + " WHERE "+COLUMNA_ID_lIBRO+" = " + id,null);
         if (cursorLibros.moveToFirst()){
                 libro = new Libro();
                 libro.setIdlibro(cursorLibros.getInt(0));
@@ -135,6 +135,19 @@ public class DbBiblioteca extends  DbHelper{
         boolean correcto = true;
         try {
             db.execSQL("UPDATE " + TABLE_BOOK + " SET nombre_libro = '" + libro.getNombrelibro() + "', autor_libro = '" + libro.getAutorlibro() + "', cantidad_libro = '" + libro.getCantidadlibro() + "', url_libro = '" + libro.getUrllibro() + "', imagen_libro = '" + libro.getImagenlibro() + "', descripcion_libro = '" + libro.getDescripcionlibro() + "' WHERE id_libro='" + libro.getIdlibro() + "' ");
+            correcto = true;
+        }catch (Exception ex){
+            ex.toString();
+            correcto = false;
+        }finally {
+            db.close();
+        }
+        return correcto;
+    }
+    public  boolean prestarLibro(Libro libro){
+        boolean correcto = true;
+        try{
+            db.execSQL(" UPDATE " + TABLE_BOOK + " SET cantidad_libro = " + libro.getCantidadlibro() + " WHERE " + COLUMNA_ID_lIBRO + " = " + libro.getIdlibro()  );
             correcto = true;
         }catch (Exception ex){
             ex.toString();

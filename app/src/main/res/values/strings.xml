@@ -49,6 +49,6 @@
     <string name="MenuSalir">Salir</string>
 
     /* User Menu items */
-
+    <string name="btnPrestarLibro">Prestar</string>
 
 </resources>
