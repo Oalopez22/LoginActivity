@@ -17,6 +17,9 @@
         android:theme="@style/Theme.LoginActivity"
         tools:targetApi="31">
         <activity
+            android:name=".InfoUserBook"
+            android:exported="false" />
+        <activity
             android:name=".UserLendBook"
             android:exported="false" />
         <activity

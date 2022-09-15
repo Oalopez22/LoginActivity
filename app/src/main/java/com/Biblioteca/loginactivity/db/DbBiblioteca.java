@@ -10,15 +10,21 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 
 import com.Biblioteca.loginactivity.RegisterUser;
+import com.Biblioteca.loginactivity.SharedPreferences.SharedPreferences;
 import com.Biblioteca.loginactivity.entidades.Libro;
+import com.Biblioteca.loginactivity.entidades.LibroPrestado;
 import com.Biblioteca.loginactivity.entidades.Usuario;
 
+import java.lang.reflect.Array;
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class DbBiblioteca extends  DbHelper{
     Context context;
     DbHelper dbhelper;
     SQLiteDatabase db;
+    SharedPreferences sp;
     Libro libro;
     Usuario user;
     public DbBiblioteca(@Nullable Context context) {
@@ -113,6 +119,37 @@ public class DbBiblioteca extends  DbHelper{
     }
 
 
+    public ArrayList<LibroPrestado> mostrarLibrosUsuario(SharedPreferences sp){
+
+        ArrayList<Libro> datoslibro = new ArrayList<>();
+        Libro libroData = null;
+
+        ArrayList<LibroPrestado> listaLibros = new ArrayList<>();
+        LibroPrestado libros = null;
+        Cursor cursorLibros = null;
+        cursorLibros =db.rawQuery("SELECT bk.nombre_libro, bk.autor_libro, bk.imagen_libro, db.*  FROM " + TABLE_DETAIL_BOOK + " db" + " INNER JOIN "+ TABLE_BOOK + " bk " + " ON " + " bk." + COLUMNA_ID_lIBRO + " = " + " db. " +COLUMNA_ID_LIBRO_USER  + " WHERE " + COLUMNA_USER_CORREO + "= '" + sp.getCorreo() + "'" /*+ " AND " + COLUMNA_ESTADO_LIBRO + " =" + 0*/,null);
+        if (cursorLibros.moveToFirst()){
+            do{
+                libroData = new Libro();
+                libroData.setNombrelibro(cursorLibros.getString(0));
+                libroData.setAutorlibro(cursorLibros.getString(1));
+                libroData.setImagenlibro(cursorLibros.getString(3));
+                libros = new LibroPrestado();
+                libros.setCorreo_user(cursorLibros.getString(3));
+                libros.setId_libro_ref(cursorLibros.getInt(4));
+                libros.setFecha_prestado(cursorLibros.getString(3));
+                libros.setFecha_entrega(cursorLibros.getString(5));
+                datoslibro.add(libroData);
+                listaLibros.add(libros);
+            }while (cursorLibros.moveToNext());
+        }
+        cursorLibros.close();
+
+
+        return listaLibros;
+    }
+
+
     public Libro verLibros(int id){
         libro = null;
         Cursor cursorLibros = null;
@@ -133,6 +170,7 @@ public class DbBiblioteca extends  DbHelper{
 
     public boolean editarLibro(Libro libro){
         boolean correcto = true;
+        long id = 0;
         try {
             db.execSQL("UPDATE " + TABLE_BOOK + " SET nombre_libro = '" + libro.getNombrelibro() + "', autor_libro = '" + libro.getAutorlibro() + "', cantidad_libro = '" + libro.getCantidadlibro() + "', url_libro = '" + libro.getUrllibro() + "', imagen_libro = '" + libro.getImagenlibro() + "', descripcion_libro = '" + libro.getDescripcionlibro() + "' WHERE id_libro='" + libro.getIdlibro() + "' ");
             correcto = true;
@@ -144,9 +182,20 @@ public class DbBiblioteca extends  DbHelper{
         }
         return correcto;
     }
-    public  boolean prestarLibro(Libro libro){
+    public  boolean prestarLibro(SharedPreferences sp , Libro libro){
+        String CurrentDate;
+        long id = 0;
         boolean correcto = true;
         try{
+            Calendar calendar = Calendar.getInstance();
+            CurrentDate = DateFormat.getDateInstance().format(calendar.getTime());
+
+            ContentValues values = new ContentValues();
+            values.put("correo_usuario",sp.getCorreo());
+            values.put("id_libro_referencia", libro.getIdlibro());
+            values.put("fecha_prestado", CurrentDate);
+            values.put("estado_libro", 0);
+            id = db.insert(TABLE_DETAIL_BOOK, null, values);
             db.execSQL(" UPDATE " + TABLE_BOOK + " SET cantidad_libro = " + libro.getCantidadlibro() + " WHERE " + COLUMNA_ID_lIBRO + " = " + libro.getIdlibro()  );
             correcto = true;
         }catch (Exception ex){

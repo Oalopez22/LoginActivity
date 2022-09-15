@@ -12,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.Biblioteca.loginactivity.R;
-import com.Biblioteca.loginactivity.UserAvailableBooks;
 import com.Biblioteca.loginactivity.UserLendBook;
 import com.Biblioteca.loginactivity.entidades.Libro;
 import com.bumptech.glide.Glide;
@@ -51,9 +50,9 @@ public class DescLibroAdapter extends RecyclerView.Adapter<DescLibroAdapter.Desc
         public DescViewHolder(@NonNull View itemView) {
             super(itemView);
 /*            viewBookImg = itemView.findViewById(R.id.imgViewBook);*/
-            viewNombreLibro = itemView.findViewById(R.id.viewNombreLibrouser);
-            viewAutorLibro = itemView.findViewById(R.id.viewAutoruser);
-            imgimagen = itemView.findViewById(R.id.imageView2user);
+            viewNombreLibro = itemView.findViewById(R.id.ViewLibroAuthor);
+            viewAutorLibro = itemView.findViewById(R.id.ViewLibroAuthor);
+            imgimagen = itemView.findViewById(R.id.imgviewLibro);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

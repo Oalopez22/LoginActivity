@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,7 +48,7 @@ public class LendBookAdapter extends RecyclerView.Adapter<LendBookAdapter.LendBo
         ImageView imagenLibroUser;
         public LendBookViewHolder(@NonNull View itemView) {
             super(itemView);
-            imagenLibroUser = itemView.findViewById(R.id.imageView2user);
+            imagenLibroUser = itemView.findViewById(R.id.imgviewLibro);
             viewNameBook= itemView.findViewById(R.id.txtverBookName);
             viewAuthorBook = itemView.findViewById(R.id.txtverBookAutor);
             viewDescBook = itemView.findViewById(R.id.txtverBookDesc);

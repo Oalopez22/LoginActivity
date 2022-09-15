@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.Biblioteca.loginactivity.SharedPreferences.SharedPreferences;
 import com.Biblioteca.loginactivity.adaptadores.DescLibroAdapter;
 import com.Biblioteca.loginactivity.adaptadores.LendBookAdapter;
 import com.Biblioteca.loginactivity.db.DbBiblioteca;
@@ -25,9 +26,10 @@ import java.util.ArrayList;
 public class UserLendBook extends AppCompatActivity {
     /*TextView txtNameBook, txtAuthorBook, txtDescBook;*/
     TextView txtNameBook, txtAuthorBook, txtDescBook;
-    ImageView imgViewBook;
+    ImageView imgViewBook ,imgArrowBack;
     DbBiblioteca dbBiblioteca;
     Button btnPrestarLibro;
+    SharedPreferences sp;
     Libro libro;
     int id = 0;
     int contador;
@@ -38,7 +40,7 @@ public class UserLendBook extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_lend_book);
         dbBiblioteca = new DbBiblioteca(UserLendBook.this);
-
+        sp = new SharedPreferences(this);
         libro = new Libro();
         contador = 0;
         txtNameBook = findViewById(R.id.txtverBooknombre);
@@ -46,7 +48,13 @@ public class UserLendBook extends AppCompatActivity {
         txtAuthorBook = findViewById(R.id.txtverBookAutor2);
         txtDescBook = findViewById(R.id.txtverBookDescripcion);
         imgViewBook = findViewById(R.id.imgViewBook2);
-
+        imgArrowBack = findViewById(R.id.imgArrowBack);
+        imgArrowBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 /*        LendBookAdapter adapter = new LendBookAdapter(dbBiblioteca.mostrarLibros());
         datoslibro.setAdapter(adapter);*/
         correcto = false;
@@ -61,7 +69,6 @@ public class UserLendBook extends AppCompatActivity {
             id = (int) savedInstanceState.getSerializable("ID");
         }
         libro = dbBiblioteca.verLibros(id);
-        Toast.makeText(this, "Nombre Libro :"+libro.getNombrelibro() + " Autor libro : "+ libro.getAutorlibro(), Toast.LENGTH_SHORT).show();
 
         Glide.with(imgViewBook).load(libro.getImagenlibro()).into(imgViewBook);
         txtNameBook.setText(libro.getNombrelibro());
@@ -75,9 +82,9 @@ public class UserLendBook extends AppCompatActivity {
             public void onClick(View v) {
             contador = libro.getCantidadlibro();
             contador = contador-1;
+            sp.getCorreo();
             libro.setCantidadlibro(contador);
-            dbBiblioteca.prestarLibro(libro);
-
+            dbBiblioteca.prestarLibro( sp, libro);
             inicio();
             }
         });
@@ -86,4 +93,5 @@ public class UserLendBook extends AppCompatActivity {
         Intent intent = new Intent(this,UserActivity.class);
         startActivity(intent);
     }
+
 }

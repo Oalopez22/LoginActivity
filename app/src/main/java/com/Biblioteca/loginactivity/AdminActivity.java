@@ -33,7 +33,7 @@ public class AdminActivity extends AppCompatActivity {
         ListaLibrosAdapter adapter = new ListaLibrosAdapter(dbBiblioteca.mostrarLibros());
         listalibros.setAdapter(adapter);
        /* bM.rvMenu.setLayoutManager(new GridLayoutManager(MainActivity.this, 2));*/
-        imgPlus = findViewById(R.id.btnPlus);
+        imgPlus = findViewById(R.id.imgArrowBack);
         imgLibro = findViewById(R.id.imageView2);
         listalibros.setLayoutManager(new GridLayoutManager(AdminActivity.this,2));
 

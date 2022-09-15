@@ -19,7 +19,7 @@ import com.Biblioteca.loginactivity.entidades.Libro;
 import java.util.ArrayList;
 
 public class UserAvailableBooks extends AppCompatActivity {
-    ImageView imgPlus;
+    ImageView imgPlus, imgArrowBack;
     RecyclerView listalibros;
     DbBiblioteca dbBiblioteca;
     ArrayList<Libro> listaArrayLibros;
@@ -36,27 +36,13 @@ public class UserAvailableBooks extends AppCompatActivity {
         listalibros.setAdapter(adapter);
         listalibros.setLayoutManager(new GridLayoutManager(UserAvailableBooks.this,2));
 
-
-/*        imgPlus.setOnClickListener(new View.OnClickListener() {
+        imgArrowBack = findViewById(R.id.imgArrowBackBook);
+        imgArrowBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopupMenu popupMenu = new PopupMenu(UserAvailableBooks.this,imgPlus);
-                popupMenu.getMenuInflater().inflate(R.menu.menuuser,popupMenu.getMenu());
-
-                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-
-                        int id = item.getItemId();
-                        if (id == R.id.MenuSalir){
-                            return true;
-                        }
-                        return false;
-                    }
-                });
-                popupMenu.show();
+                finish();
             }
-        });*/
+        });
 
     }
 }

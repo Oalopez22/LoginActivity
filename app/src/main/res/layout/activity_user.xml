@@ -37,7 +37,7 @@
         tools:layout_editor_absoluteY="25dp" />
 
     <ImageView
-        android:id="@+id/btnPlus"
+        android:id="@+id/imgArrowBack"
         android:layout_width="48dp"
         android:layout_height="51dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -104,13 +104,10 @@
       android:layout_marginHorizontal="20dp">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RviewAdminBooks"
+        android:id="@+id/RviewUserBooks"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="2"
-        tools:itemCount="2"
-        tools:listitem="@layout/lista_item_libros" />
+        />
   </LinearLayout>
 
   <LinearLayout

@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DbHelper extends SQLiteOpenHelper {
-    private static  final int DATABASE_VERSION = 2;
+    private static  final int DATABASE_VERSION = 1;
     private static  final String DATABASE_NAME = "biblioteca.db";
     public static  final String TABLE_USER = "usuario";
     public static final String COLUMNA_ID = "_id";
@@ -32,7 +32,12 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String COLUMNA_IMAGEN_LIBRO = "imagen_libro";
     public static final String COLUMNA_DESCRIPCION_LIBRO = "descripcion_libro";
 
-
+    public static final String TABLE_DETAIL_BOOK = "detail_book";
+    public static final String COLUMNA_USER_CORREO = "correo_usuario";
+    public static final String COLUMNA_ID_LIBRO_USER = "id_libro_referencia";
+    public static final String COLUMNA_FECHA_PRESTAMO = "fecha_prestado";
+    public static final String COLUMNA_FECHA_ENTREGA = "fecha_entrega";
+    public static final String COLUMNA_ESTADO_LIBRO = "estado_libro";
 
 
     public DbHelper(@Nullable Context context) {
@@ -70,6 +75,19 @@ public class DbHelper extends SQLiteOpenHelper {
                 + " text not null, " + COLUMNA_DESCRIPCION_LIBRO
                 + " text not null)");
 
+        db.execSQL("INSERT INTO libro (nombre_libro,autor_libro,cantidad_libro,url_libro,imagen_libro,descripcion_libro) VALUES ('Frankenstein','Mary Shelley',20,'https://hangar.org/wp-content/uploads/2020/04/frankenstein__o_el_moderno_prometeo.pdf','https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Frankenstein.1831.inside-cover.jpg/215px-Frankenstein.1831.inside-cover.jpg','es una obra literaria de la escritora inglesa Mary Shelley. Publicado el 1 de enero de 1818 y enmarcado en la tradición de la novela gótica, el texto habla de temas tales como la moral científica, la creación y destrucción de vida y el atrevimiento de la humanidad en su relación con Dios.')");
+        db.execSQL("INSERT INTO libro (nombre_libro,autor_libro,cantidad_libro,url_libro,imagen_libro,descripcion_libro) VALUES ('Drácula','Bram Stoker',30,'https://portalacademico.cch.unam.mx/materiales/al/cont/tall/tlriid/tlriid4/circuloLectores/docs/dracula.pdf','https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Dracula_1st_ed_cover_reproduction.jpg/800px-Dracula_1st_ed_cover_reproduction.jpg','La obra comienza con Jonathan Harker, un joven abogado londinense comprometido con Wilhemina Murray (Mina), el cual se encuentra en la ciudad de Bistritz como parte de una viaje de negocios, que continuará a través del desfiladero del Borgo hasta el remoto castillo de su cliente, el conde Drácula, en una de las regiones más lejanas de la Rumania de la época, los Montes Cárpatos de Transilvania, para cerrar unas ventas con él.')");
+
+
+            /* Tabla detalle libro */
+        db.execSQL("create table "
+                + TABLE_DETAIL_BOOK + "(" + COLUMNA_USER_CORREO
+                + " text not null, " + COLUMNA_ID_LIBRO_USER
+                + " integer not null, " + COLUMNA_FECHA_PRESTAMO
+                + " date not null, " + COLUMNA_FECHA_ENTREGA
+                + " date , " + COLUMNA_ESTADO_LIBRO
+                + " integer )");
+
     }
 
     @Override
@@ -77,6 +95,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL(" DROP TABLE " + TABLE_USER);
         db.execSQL(" DROP TABLE " + TABLE_TIP_USER);
         db.execSQL(" DROP TABLE " + TABLE_BOOK);
+        db.execSQL(" DROP TABLE " + TABLE_DETAIL_BOOK);
         onCreate(db);
     }
 }
